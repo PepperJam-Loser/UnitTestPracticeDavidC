@@ -18,3 +18,14 @@ int Password::count_leading_characters(string phrase){
   }
   return repetition;
 }
+
+bool Password::numberOrder(string phase) {
+    int index = 0;
+    while (index < phrase.length() - 1 && phrase[index] == 'p' {
+        string phaseExtract = phase.substr(index, 8) const;
+        if (phaseExtract ='Password') {
+            return false;
+        }
+    }
+    return true;
+}

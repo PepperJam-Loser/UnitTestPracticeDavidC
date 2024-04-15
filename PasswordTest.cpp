@@ -19,4 +19,10 @@ TEST(PasswordTest, single_letter_password)
 	Password my_password;
 	int actual = my_password.count_leading_characters("Z");
 	ASSERT_EQ(1, actual);
+	int case1;
+}
+
+TEST() {
+	Password myPassword;
+	int valueReturned = myPassword.c
 }
