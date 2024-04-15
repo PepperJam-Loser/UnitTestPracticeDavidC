@@ -12,20 +12,28 @@ using std::string;
 int Password::count_leading_characters(string phrase){
   int repetition = 1;
   int index = 0;
-  while( index < phrase.length()-1 && phrase[index] == phrase[index+1] ){
+  while( index < phrase.length() && phrase[index] == phrase[index+1] ){
     repetition++;
     index++;
   }
   return repetition;
 }
 
-bool Password::numberOrder(string phase) {
+bool Password::has_mixed_case(string phrase) {
     int index = 0;
-    while (index < phrase.length() - 1 && phrase[index] == 'p' {
-        string phaseExtract = phase.substr(index, 8) const;
-        if (phaseExtract ='Password') {
-            return false;
+    bool upperCheck = false;
+    bool lowerCheck = false;
+    while (index < phrase.length()) {
+        if (isupper(phrase[index])) {
+            upperCheck = true;
         }
+        if (islower(phrase[index])) {
+            lowerCheck = true;
+        }
+        if (upperCheck == true && lowerCheck == true) {
+            return true;
+        }
+        index++;
     }
-    return true;
+    return false;
 }

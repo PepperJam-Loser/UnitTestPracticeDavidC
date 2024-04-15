@@ -22,7 +22,46 @@ TEST(PasswordTest, single_letter_password)
 	int case1;
 }
 
-TEST() {
+TEST(PasswordTest, leadingPass1)
+{
+	Password my_password;
+	int actual = my_password.count_leading_characters("ZzZ");
+	ASSERT_EQ(1, actual);
+	int case1;
+}
+
+TEST(PasswordTest, leadingFail1)
+{
+	Password my_password;
+	int actual = my_password.count_leading_characters("ZZZ");
+	ASSERT_EQ(1, actual);
+	int case1;
+}
+
+TEST(PasswordTest, mixedFail1) {
 	Password myPassword;
-	int valueReturned = myPassword.c
+	bool valueReturned = myPassword.has_mixed_case("bloom");
+	ASSERT_TRUE(valueReturned);
+	int case2;
+}
+
+TEST(PasswordTest, mixedFail2) {
+	Password myPassword;
+	bool valueReturned = myPassword.has_mixed_case("zoom");
+	ASSERT_TRUE(valueReturned);
+	int case2;
+}
+
+TEST(PasswordTest, mixedPass1) {
+	Password myPassword;
+	bool valueReturned = myPassword.has_mixed_case("Bloom");
+	ASSERT_TRUE(valueReturned);
+	int case2;
+}
+
+TEST(PasswordTest, mixedPass2) {
+	Password myPassword;
+	bool valueReturned = myPassword.has_mixed_case("blooM");
+	ASSERT_TRUE(valueReturned);
+	int case2;
 }
